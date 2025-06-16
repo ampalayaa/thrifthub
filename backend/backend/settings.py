@@ -57,6 +57,17 @@ CORS_ORIGIN_ALLOW_ALL = True #for development
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',  # Change later if needed
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        # Add JWT later if needed
+    ],
+}
+
 ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
